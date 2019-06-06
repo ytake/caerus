@@ -13,9 +13,17 @@ class DifferenceFormatter {
   ): string {
     $isNow = $other === null;
     if ($isNow) {
-      $other = $date::now($date);
+      $other = $date::now($date->getTimezone());
       // $date-> now($date);
     }
+    invariant($other is nonnull, 'error');
     $diffInterval = $date->diff($other);
+    invariant($diffInterval is \DateInterval, 'error no DateInterval class');
+    switch (true) {
+      case ($diffInterval->y > 0):
+        $unit = 'year';
+        $count = $diffInterval->y;
+        break;
+      }
   }
 }

@@ -1,9 +1,10 @@
 namespace Ytake\Hurry;
 
+use namespace HH\Lib\Str;
 use function array_keys;
 use function str_replace;
 
-enum DiffString: string {
+enum DiffString: string as string {
   YEAR = '1 year';
   YEAR_PLURAL = '{count} years';
   MONTH = '1 month';
@@ -34,6 +35,6 @@ final class Translator {
     foreach ($varKeys as $i => $k) {
       $varKeys[$i] = '{' . $k . '}';
     }
-    return str_replace($varKeys, $vars, $key);
+    return \str_replace($key, (string) $varKeys, $vars);
   }
 }

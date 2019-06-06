@@ -198,470 +198,123 @@ interface ExtendedDateTimeInterface extends DateTimeInterface {
 
   public function isSunday(): bool;
 
-  /**
-   * Checks if this day is a Monday.
-   */
   public function isMonday(): bool;
 
-  /**
-   * Checks if this day is a Tuesday.
-   */
   public function isTuesday(): bool;
 
-    /**
-     * Checks if this day is a Wednesday.
-     *
-     * @return bool
-     */
-    public function isWednesday(): bool;
+  public function isWednesday(): bool;
 
-    /**
-     * Checks if this day is a Thursday.
-     *
-     * @return bool
-     */
-    public function isThursday();
+  public function isThursday(): bool;
 
-    /**
-     * Checks if this day is a Friday.
-     *
-     * @return bool
-     */
-    public function isFriday();
+  public function isFriday(): bool;
 
-    /**
-     * Checks if this day is a Saturday.
-     *
-     * @return bool
-     */
-    public function isSaturday();
+  public function isSaturday(): bool;
 
-    /**
-     * Returns true if this object represents a date within the current week
-     *
-     * @return bool
-     */
-    public function isThisWeek();
+  public function isThisWeek(): bool;
 
-    /**
-     * Returns true if this object represents a date within the current month
-     *
-     * @return bool
-     */
-    public function isThisMonth();
+  public function isThisMonth(): bool;
 
-    /**
-     * Returns true if this object represents a date within the current year
-     *
-     * @return bool
-     */
-    public function isThisYear();
+  public function isThisYear(): bool;
 
-    /**
-     * Add years to the instance. Positive $value travel forward while
-     * negative $value travel into the past.
-     *
-     * @param int $value The number of years to add.
-     * @return static
-     */
-    public function addYears($value);
+  public function addYears(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Add a year to the instance
-     *
-     * @param int $value The number of years to add.
-     * @return static
-     */
-    public function addYear($value = 1);
+  public function addYear(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove a year from the instance
-     *
-     * @param int $value The number of years to remove.
-     * @return static
-     */
-    public function subYear($value = 1);
+  public function subYear(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove years from the instance.
-     *
-     * @param int $value The number of years to remove.
-     * @return static
-     */
-    public function subYears($value);
+  public function subYears(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Add months to the instance. Positive $value travels forward while
-     * negative $value travels into the past.
-     *
-     * When adding or subtracting months, if the resulting time is a date
-     * that does not exist, the result of this operation will always be the
-     * last day of the intended month.
-     *
-     * ### Example:
-     *
-     * ```
-     *  (new Chronos('2015-01-03'))->addMonths(1); // Results in 2015-02-03
-     *
-     *  (new Chronos('2015-01-31'))->addMonths(1); // Results in 2015-02-28
-     * ```
-     *
-     * @param int $value The number of months to add.
-     * @return static
-     */
-    public function addMonths($value);
+  public function addMonths(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Add a month to the instance
-     *
-     * When adding or subtracting months, if the resulting time is a date
-     * that does not exist, the result of this operation will always be the
-     * last day of the intended month.
-     *
-     * ### Example:
-     *
-     * ```
-     *  (new Chronos('2015-01-03'))->addMonth(); // Results in 2015-02-03
-     *
-     *  (new Chronos('2015-01-31'))->addMonth(); // Results in 2015-02-28
-     * ```
-     *
-     * @param int $value The number of months to add.
-     * @return static
-     */
-    public function addMonth($value = 1);
+  public function addMonth(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove a month from the instance
-     *
-     * When adding or subtracting months, if the resulting time is a date
-     * that does not exist, the result of this operation will always be the
-     * last day of the intended month.
-     *
-     * ### Example:
-     *
-     * ```
-     *  (new Chronos('2015-03-01'))->subMonth(); // Results in 2015-02-01
-     *
-     *  (new Chronos('2015-03-31'))->subMonth(); // Results in 2015-02-28
-     * ```
-     *
-     * @param int $value The number of months to remove.
-     * @return static
-     */
-    public function subMonth($value = 1);
+  public function subMonth(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove months from the instance
-     *
-     * When adding or subtracting months, if the resulting time is a date
-     * that does not exist, the result of this operation will always be the
-     * last day of the intended month.
-     *
-     * ### Example:
-     *
-     * ```
-     *  (new Chronos('2015-03-01'))->subMonths(1); // Results in 2015-02-01
-     *
-     *  (new Chronos('2015-03-31'))->subMonths(1); // Results in 2015-02-28
-     * ```
-     *
-     * @param int $value The number of months to remove.
-     * @return static
-     */
-    public function subMonths($value);
+  /**
+   * Remove months from the instance
+   */
+  public function subMonths(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Add months with overflowing to the instance. Positive $value
-     * travels forward while negative $value travels into the past.
-     *
-     * @param int $value The number of months to add.
-     * @return static
-     */
-    public function addMonthsWithOverflow($value);
+  public function addMonthsWithOverflow(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Add a month with overflow to the instance
-     *
-     * @param int $value The number of months to add.
-     * @return static
-     */
-    public function addMonthWithOverflow($value = 1);
+  public function addMonthWithOverflow(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove a month with overflow from the instance
-     *
-     * @param int $value The number of months to remove.
-     * @return static
-     */
-    public function subMonthWithOverflow($value = 1);
+  public function subMonthWithOverflow(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove months with overflow from the instance
-     *
-     * @param int $value The number of months to remove.
-     * @return static
-     */
-    public function subMonthsWithOverflow($value);
+  public function subMonthsWithOverflow(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Add days to the instance. Positive $value travels forward while
-     * negative $value travels into the past.
-     *
-     * @param int $value The number of days to add.
-     * @return static
-     */
-    public function addDays($value);
+  public function addDays(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Add a day to the instance
-     *
-     * @param int $value The number of days to add.
-     * @return static
-     */
-    public function addDay($value = 1);
+  public function addDay(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove a day from the instance
-     *
-     * @param int $value The number of days to remove.
-     * @return static
-     */
-    public function subDay($value = 1);
+  public function subDay(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove days from the instance
-     *
-     * @param int $value The number of days to remove.
-     * @return static
-     */
-    public function subDays($value);
+  public function subDays(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Add weekdays to the instance. Positive $value travels forward while
-     * negative $value travels into the past.
-     *
-     * @param int $value The number of weekdays to add.
-     * @return static
-     */
-    public function addWeekdays($value);
+  public function addWeekdays(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Add a weekday to the instance
-     *
-     * @param int $value The number of weekdays to add.
-     * @return static
-     */
-    public function addWeekday($value = 1);
+  public function addWeekday(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove a weekday from the instance
-     *
-     * @param int $value The number of weekdays to remove.
-     * @return static
-     */
-    public function subWeekday($value = 1);
+  public function subWeekday(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove weekdays from the instance
-     *
-     * @param int $value The number of weekdays to remove.
-     * @return static
-     */
-    public function subWeekdays($value);
+  public function subWeekdays(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Add weeks to the instance. Positive $value travels forward while
-     * negative $value travels into the past.
-     *
-     * @param int $value The number of weeks to add.
-     * @return static
-     */
-    public function addWeeks($value);
+  public function addWeeks(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Add a week to the instance
-     *
-     * @param int $value The number of weeks to add.
-     * @return static
-     */
-    public function addWeek($value = 1);
+  public function addWeek(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove a week from the instance
-     *
-     * @param int $value The number of weeks to remove.
-     * @return static
-     */
-    public function subWeek($value = 1);
+  public function subWeek(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove weeks to the instance
-     *
-     * @param int $value The number of weeks to remove.
-     * @return static
-     */
-    public function subWeeks($value);
+  public function subWeeks(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Add hours to the instance. Positive $value travels forward while
-     * negative $value travels into the past.
-     *
-     * @param int $value The number of hours to add.
-     * @return static
-     */
-    public function addHours($value);
+  public function addHours(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Add an hour to the instance
-     *
-     * @param int $value The number of hours to add.
-     * @return static
-     */
-    public function addHour($value = 1);
+  public function addHour(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove an hour from the instance
-     *
-     * @param int $value The number of hours to remove.
-     * @return static
-     */
-    public function subHour($value = 1);
+  public function subHour(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove hours from the instance
-     *
-     * @param int $value The number of hours to remove.
-     * @return static
-     */
-    public function subHours($value);
+  public function subHours(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Add minutes to the instance. Positive $value travels forward while
-     * negative $value travels into the past.
-     *
-     * @param int $value The number of minutes to add.
-     * @return static
-     */
-    public function addMinutes($value);
+  public function addMinutes(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Add a minute to the instance
-     *
-     * @param int $value The number of minutes to add.
-     * @return static
-     */
-    public function addMinute($value = 1);
+  public function addMinute(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove a minute from the instance
-     *
-     * @param int $value The number of minutes to remove.
-     * @return static
-     */
-    public function subMinute($value = 1);
+  public function subMinute(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove minutes from the instance
-     *
-     * @param int $value The number of minutes to remove.
-     * @return static
-     */
-    public function subMinutes($value);
+  public function subMinutes(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Add seconds to the instance. Positive $value travels forward while
-     * negative $value travels into the past.
-     *
-     * @param int $value The number of seconds to add.
-     * @return static
-     */
-    public function addSeconds($value);
+  public function addSeconds(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Add a second to the instance
-     *
-     * @param int $value The number of seconds to add.
-     * @return static
-     */
-    public function addSecond($value = 1);
+  public function addSecond(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove a second from the instance
-     *
-     * @param int $value The number of seconds to remove.
-     * @return static
-     */
-    public function subSecond($value = 1);
+  public function subSecond(int $value = 1): ExtendedDateTimeInterface;
 
-    /**
-     * Remove seconds from the instance
-     *
-     * @param int $value The number of seconds to remove.
-     * @return static
-     */
-    public function subSeconds($value);
+  public function subSeconds(int $value): ExtendedDateTimeInterface;
 
-    /**
-     * Get the difference in a human readable format in the current locale.
-     *
-     * When comparing a value in the past to default now:
-     * 1 hour ago
-     * 5 months ago
-     *
-     * When comparing a value in the future to default now:
-     * 1 hour from now
-     * 5 months from now
-     *
-     * When comparing a value in the past to another value:
-     * 1 hour before
-     * 5 months before
-     *
-     * When comparing a value in the future to another value:
-     * 1 hour after
-     * 5 months after
-     *
-     * @param \Cake\Chronos\ChronosInterface|null $other The datetime to compare with.
-     * @param bool $absolute Removes time difference modifiers ago, after, etc
-     * @return string
-     */
-    public function diffForHumans(ChronosInterface $other = null, $absolute = false);
+  public function diffForHumans(
+    ?ExtendedDateTimeInterface $other = null, 
+    bool $absolute = false
+  ): string;
 
-    /**
-     * Get the difference in years
-     *
-     * @param \Cake\Chronos\ChronosInterface|null $dt The instance to difference from.
-     * @param bool $abs Get the absolute of the difference
-     * @return int
-     */
-    public function diffInYears(ChronosInterface $dt = null, $abs = true);
+  public function diffInYears(
+    ?ExtendedDateTimeInterface $dt = null,
+    bool $abs = true
+  ): int;
 
-    /**
-     * Get the difference in months
-     *
-     * @param \Cake\Chronos\ChronosInterface|null $dt The instance to difference from.
-     * @param bool $abs Get the absolute of the difference
-     * @return int
-     */
-    public function diffInMonths(ChronosInterface $dt = null, $abs = true);
+  public function diffInMonths(
+    ?ExtendedDateTimeInterface $dt = null,
+    bool $abs = true
+  ): int;
 
-    /**
-     * Get the difference in weeks
-     *
-     * @param \Cake\Chronos\ChronosInterface|null $dt The instance to difference from.
-     * @param bool $abs Get the absolute of the difference
-     * @return int
-     */
-    public function diffInWeeks(ChronosInterface $dt = null, $abs = true);
+  public function diffInWeeks(
+    ?ExtendedDateTimeInterface $dt = null,
+    bool $abs = true
+  ): int;
 
-    /**
-     * Get the difference in days
-     *
-     * @param \Cake\Chronos\ChronosInterface|null $dt The instance to difference from.
-     * @param bool $abs Get the absolute of the difference
-     * @return int
-     */
-    public function diffInDays(ChronosInterface $dt = null, $abs = true);
+  public function diffInDays(
+    ?ExtendedDateTimeInterface $dt = null,
+    bool $abs = true
+  ): int;
 
     /**
      * Get the difference in days using a filter callable
@@ -671,7 +324,7 @@ interface ExtendedDateTimeInterface extends DateTimeInterface {
      * @param bool $abs Get the absolute of the difference
      * @return int
      */
-    public function diffInDaysFiltered(callable $callback, ChronosInterface $dt = null, $abs = true);
+    // public function diffInDaysFiltered(callable $callback, ChronosInterface $dt = null, $abs = true);
 
     /**
      * Get the difference in hours using a filter callable
@@ -681,7 +334,7 @@ interface ExtendedDateTimeInterface extends DateTimeInterface {
      * @param bool $abs Get the absolute of the difference
      * @return int
      */
-    public function diffInHoursFiltered(callable $callback, ChronosInterface $dt = null, $abs = true);
+    // public function diffInHoursFiltered(callable $callback, ChronosInterface $dt = null, $abs = true);
 
     /**
      * Get the difference by the given interval using a filter callable
@@ -692,308 +345,175 @@ interface ExtendedDateTimeInterface extends DateTimeInterface {
      * @param bool $abs Get the absolute of the difference
      * @return int
      */
-    public function diffFiltered(ChronosInterval $ci, callable $callback, ChronosInterface $dt = null, $abs = true);
+    // public function diffFiltered(ChronosInterval $ci, callable $callback, ChronosInterface $dt = null, $abs = true);
 
-    /**
-     * Get the difference in weekdays
-     *
-     * @param \Cake\Chronos\ChronosInterface|null $dt The instance to difference from.
-     * @param bool $abs Get the absolute of the difference
-     * @return int
-     */
-    public function diffInWeekdays(ChronosInterface $dt = null, $abs = true);
+  public function diffInWeekdays(
+    ?ExtendedDateTimeInterface $dt = null,
+    bool $abs = true
+  ): int;
 
-    /**
-     * Get the difference in weekend days using a filter
-     *
-     * @param \Cake\Chronos\ChronosInterface|null $dt The instance to difference from.
-     * @param bool $abs Get the absolute of the difference
-     * @return int
-     */
-    public function diffInWeekendDays(ChronosInterface $dt = null, $abs = true);
+  public function diffInWeekendDays(
+    ?ExtendedDateTimeInterface $dt = null,
+    bool $abs = true
+  ): int;
 
-    /**
-     * Get the difference in hours
-     *
-     * @param \Cake\Chronos\ChronosInterface|null $dt The instance to difference from.
-     * @param bool $abs Get the absolute of the difference
-     * @return int
-     */
-    public function diffInHours(ChronosInterface $dt = null, $abs = true);
+  public function diffInHours(
+    ?ExtendedDateTimeInterface $dt = null,
+    bool $abs = true
+  ): int;
 
-    /**
-     * Get the difference in minutes
-     *
-     * @param \Cake\Chronos\ChronosInterface|null $dt The instance to difference from.
-     * @param bool $abs Get the absolute of the difference
-     * @return int
-     */
-    public function diffInMinutes(ChronosInterface $dt = null, $abs = true);
+  public function diffInMinutes(
+    ?ExtendedDateTimeInterface $dt = null,
+    bool $abs = true
+  ): int;
 
-    /**
-     * Get the difference in seconds
-     *
-     * @param \Cake\Chronos\ChronosInterface|null $dt The instance to difference from.
-     * @param bool $abs Get the absolute of the difference
-     * @return int
-     */
-    public function diffInSeconds(ChronosInterface $dt = null, $abs = true);
+  public function diffInSeconds(
+    ?ExtendedDateTimeInterface $dt = null,
+    bool $abs = true
+  ): int;
 
-    /**
-     * The number of seconds since midnight.
-     *
-     * @return int
-     */
-    public function secondsSinceMidnight();
+  public function secondsSinceMidnight(): int;
 
-    /**
-     * The number of seconds until 23:59:59.
-     *
-     * @return int
-     */
-    public function secondsUntilEndOfDay();
+  public function secondsUntilEndOfDay(): int;
 
-    /**
-     * Resets the time to 00:00:00
-     *
-     * @return static
-     */
-    public function startOfDay();
+  public function startOfDay(): ExtendedDateTimeInterface;
+  
+  public function endOfDay(): ExtendedDateTimeInterface;
 
-    /**
-     * Resets the time to 23:59:59
-     *
-     * @return static
-     */
-    public function endOfDay();
+  public function startOfMonth(): ExtendedDateTimeInterface;
 
-    /**
-     * Resets the date to the first day of the month and the time to 00:00:00
-     *
-     * @return static
-     */
-    public function startOfMonth();
+  public function endOfMonth(): ExtendedDateTimeInterface;
 
-    /**
-     * Resets the date to end of the month and time to 23:59:59
-     *
-     * @return static
-     */
-    public function endOfMonth();
+  public function startOfYear(): ExtendedDateTimeInterface;
 
-    /**
-     * Resets the date to the first day of the year and the time to 00:00:00
-     *
-     * @return static
-     */
-    public function startOfYear();
+  public function endOfYear(): ExtendedDateTimeInterface;
 
-    /**
-     * Resets the date to end of the year and time to 23:59:59
-     *
-     * @return static
-     */
-    public function endOfYear();
+  public function startOfDecade(): ExtendedDateTimeInterface;
 
-    /**
-     * Resets the date to the first day of the decade and the time to 00:00:00
-     *
-     * @return static
-     */
-    public function startOfDecade();
+  public function endOfDecade(): ExtendedDateTimeInterface;
 
-    /**
-     * Resets the date to end of the decade and time to 23:59:59
-     *
-     * @return static
-     */
-    public function endOfDecade();
+  public function startOfCentury(): ExtendedDateTimeInterface;
 
-    /**
-     * Resets the date to the first day of the century and the time to 00:00:00
-     *
-     * @return static
-     */
-    public function startOfCentury();
+  public function endOfCentury(): ExtendedDateTimeInterface;
 
-    /**
-     * Resets the date to end of the century and time to 23:59:59
-     *
-     * @return static
-     */
-    public function endOfCentury();
+  public function startOfWeek(): ExtendedDateTimeInterface;
+  
+  public function endOfWeek(): ExtendedDateTimeInterface;
 
-    /**
-     * Resets the date to the first day of week (defined in $weekStartsAt) and the time to 00:00:00
-     *
-     * @return static
-     */
-    public function startOfWeek();
+  /**
+   * Modify to the next occurrence of a given day of the week.
+   * If no dayOfWeek is provided, modify to the next occurrence
+   * of the current day of the week.  Use the supplied consts
+   * to indicate the desired dayOfWeek, ex. static::MONDAY.
+   */
+  public function next(?int $dayOfWeek = null): mixed;
 
-    /**
-     * Resets the date to end of week (defined in $weekEndsAt) and time to 23:59:59
-     *
-     * @return static
-     */
-    public function endOfWeek();
+  /**
+   * Modify to the previous occurrence of a given day of the week.
+   * If no dayOfWeek is provided, modify to the previous occurrence
+   * of the current day of the week.  Use the supplied consts
+   * to indicate the desired dayOfWeek, ex. static::MONDAY.
+   */
+  public function previous(?int $dayOfWeek = null): mixed;
 
-    /**
-     * Modify to the next occurrence of a given day of the week.
-     * If no dayOfWeek is provided, modify to the next occurrence
-     * of the current day of the week.  Use the supplied consts
-     * to indicate the desired dayOfWeek, ex. static::MONDAY.
-     *
-     * @param int $dayOfWeek The day of the week to move to.
-     * @return mixed
-     */
-    public function next($dayOfWeek = null);
+  /**
+   * Modify to the first occurrence of a given day of the week
+   * in the current month. If no dayOfWeek is provided, modify to the
+   * first day of the current month.  Use the supplied consts
+   * to indicate the desired dayOfWeek, ex. static::MONDAY.
+   */
+  public function firstOfMonth(?int $dayOfWeek = null): mixed;
 
-    /**
-     * Modify to the previous occurrence of a given day of the week.
-     * If no dayOfWeek is provided, modify to the previous occurrence
-     * of the current day of the week.  Use the supplied consts
-     * to indicate the desired dayOfWeek, ex. static::MONDAY.
-     *
-     * @param int $dayOfWeek The day of the week to move to.
-     * @return mixed
-     */
-    public function previous($dayOfWeek = null);
+  /**
+   * Modify to the last occurrence of a given day of the week
+   * in the current month. If no dayOfWeek is provided, modify to the 
+   * last day of the current month.  Use the supplied consts
+   * to indicate the desired dayOfWeek, ex. static::MONDAY.
+   */
+  public function lastOfMonth(?int $dayOfWeek = null): mixed;
 
-    /**
-     * Modify to the first occurrence of a given day of the week
-     * in the current month. If no dayOfWeek is provided, modify to the
-     * first day of the current month.  Use the supplied consts
-     * to indicate the desired dayOfWeek, ex. static::MONDAY.
-     *
-     * @param int $dayOfWeek The day of the week to move to.
-     * @return mixed
-     */
-    public function firstOfMonth($dayOfWeek = null);
+  /**
+   * Modify to the given occurrence of a given day of the week
+   * in the current month. If the calculated occurrence is outside the scope 
+   * of the current month, then return false and no modifications are made.
+   * Use the supplied consts to indicate the desired dayOfWeek, ex. static::MONDAY.
+   */
+  public function nthOfMonth(int $nth, int $dayOfWeek): mixed;
 
-    /**
-     * Modify to the last occurrence of a given day of the week
-     * in the current month. If no dayOfWeek is provided, modify to the
-     * last day of the current month.  Use the supplied consts
-     * to indicate the desired dayOfWeek, ex. static::MONDAY.
-     *
-     * @param int $dayOfWeek The day of the week to move to.
-     * @return mixed
-     */
-    public function lastOfMonth($dayOfWeek = null);
+  /**
+   * Modify to the first occurrence of a given day of the week
+   * in the current quarter. If no dayOfWeek is provided, modify to the
+   * first day of the current quarter.  Use the supplied consts
+   * to indicate the desired dayOfWeek, ex. static::MONDAY.
+   */
+  public function firstOfQuarter(?int $dayOfWeek = null): mixed;
 
-    /**
-     * Modify to the given occurrence of a given day of the week
-     * in the current month. If the calculated occurrence is outside the scope
-     * of the current month, then return false and no modifications are made.
-     * Use the supplied consts to indicate the desired dayOfWeek, ex. static::MONDAY.
-     *
-     * @param int $nth The offset to use.
-     * @param int $dayOfWeek The day of the week to move to.
-     * @return mixed
-     */
-    public function nthOfMonth($nth, $dayOfWeek);
+  /**
+   * Modify to the last occurrence of a given day of the week
+   * in the current quarter. If no dayOfWeek is provided, modify to the
+   * last day of the current quarter.  Use the supplied consts
+   * to indicate the desired dayOfWeek, ex. static::MONDAY.
+   */
+  public function lastOfQuarter(?int $dayOfWeek = null): mixed;
 
-    /**
-     * Modify to the first occurrence of a given day of the week
-     * in the current quarter. If no dayOfWeek is provided, modify to the
-     * first day of the current quarter.  Use the supplied consts
-     * to indicate the desired dayOfWeek, ex. static::MONDAY.
-     *
-     * @param int $dayOfWeek The day of the week to move to.
-     * @return mixed
-     */
-    public function firstOfQuarter($dayOfWeek = null);
+  /**
+   * Modify to the given occurrence of a given day of the week
+   * in the current quarter. If the calculated occurrence is outside the scope
+   * of the current quarter, then return false and no modifications are made.
+   * Use the supplied consts to indicate the desired dayOfWeek, ex. static::MONDAY.
+   */
+  public function nthOfQuarter(int $nth, int $dayOfWeek): mixed;
 
-    /**
-     * Modify to the last occurrence of a given day of the week
-     * in the current quarter. If no dayOfWeek is provided, modify to the
-     * last day of the current quarter.  Use the supplied consts
-     * to indicate the desired dayOfWeek, ex. static::MONDAY.
-     *
-     * @param int $dayOfWeek The day of the week to move to.
-     * @return mixed
-     */
-    public function lastOfQuarter($dayOfWeek = null);
+  /**
+   * Modify to the first occurrence of a given day of the week
+   * in the current year. If no dayOfWeek is provided, modify to the
+   * first day of the current year.  Use the supplied consts
+   * to indicate the desired dayOfWeek, ex. static::MONDAY.
+   */
+  public function firstOfYear(?int $dayOfWeek = null): mixed;
 
-    /**
-     * Modify to the given occurrence of a given day of the week
-     * in the current quarter. If the calculated occurrence is outside the scope
-     * of the current quarter, then return false and no modifications are made.
-     * Use the supplied consts to indicate the desired dayOfWeek, ex. static::MONDAY.
-     *
-     * @param int $nth The offset to use.
-     * @param int $dayOfWeek The day of the week to move to.
-     * @return mixed
-     */
-    public function nthOfQuarter($nth, $dayOfWeek);
+  /**
+   * Modify to the last occurrence of a given day of the week
+   * in the current year. If no dayOfWeek is provided, modify to the
+   * last day of the current year.  Use the supplied consts
+   * to indicate the desired dayOfWeek, ex. static::MONDAY.
+   */
+  public function lastOfYear(?int $dayOfWeek = null): mixed;
 
-    /**
-     * Modify to the first occurrence of a given day of the week
-     * in the current year. If no dayOfWeek is provided, modify to the
-     * first day of the current year.  Use the supplied consts
-     * to indicate the desired dayOfWeek, ex. static::MONDAY.
-     *
-     * @param int $dayOfWeek The day of the week to move to.
-     * @return mixed
-     */
-    public function firstOfYear($dayOfWeek = null);
+  /**
+   * Modify to the given occurrence of a given day of the week
+   * in the current year. If the calculated occurrence is outside the scope
+   * of the current year, then return false and no modifications are made.
+   * Use the supplied consts to indicate the desired dayOfWeek, ex. static::MONDAY.
+   */
+  public function nthOfYear(int $nth, int $dayOfWeek): mixed;
 
-    /**
-     * Modify to the last occurrence of a given day of the week
-     * in the current year. If no dayOfWeek is provided, modify to the
-     * last day of the current year.  Use the supplied consts
-     * to indicate the desired dayOfWeek, ex. static::MONDAY.
-     *
-     * @param int $dayOfWeek The day of the week to move to.
-     * @return mixed
-     */
-    public function lastOfYear($dayOfWeek = null);
+  /**
+   * Modify the current instance to the average of a given instance (default now) and the current instance.
+   */
+  public function average(
+    ?ExtendedDateTimeInterface $dt = null
+  ): ExtendedDateTimeInterface;
 
-    /**
-     * Modify to the given occurrence of a given day of the week
-     * in the current year. If the calculated occurrence is outside the scope
-     * of the current year, then return false and no modifications are made.
-     * Use the supplied consts to indicate the desired dayOfWeek, ex. static::MONDAY.
-     *
-     * @param int $nth The offset to use.
-     * @param int $dayOfWeek The day of the week to move to.
-     * @return mixed
-     */
-    public function nthOfYear($nth, $dayOfWeek);
+  /**
+   * Check if its the birthday. Compares the date/month values of the two dates.
+   */
+  public function isBirthday(
+    ExtendedDateTimeInterface $dt
+  ): bool;
 
-    /**
-     * Modify the current instance to the average of a given instance (default now) and the current instance.
-     *
-     * @param \Cake\Chronos\ChronosInterface $dt The instance to compare with.
-     * @return static
-     */
-    public function average(ChronosInterface $dt = null);
+  /**
+   * Returns true this instance happened within the specified interval
+   */
+  public function wasWithinLast(arraykey $timeInterval): bool;
 
-    /**
-     * Check if its the birthday. Compares the date/month values of the two dates.
-     *
-     * @param \Cake\Chronos\ChronosInterface $dt The instance to compare with.
-     * @return bool
-     */
-    public function isBirthday(ChronosInterface $dt);
-
-    /**
-     * Returns true this instance happened within the specified interval
-     *
-     * @param string|int $timeInterval the numeric value with space then time type.
-     *    Example of valid types: 6 hours, 2 days, 1 minute.
-     * @return bool
-     */
-    public function wasWithinLast($timeInterval);
-
-    /**
-     * Returns true this instance will happen within the specified interval
-     *
-     * @param string|int $timeInterval the numeric value with space then time type.
-     *    Example of valid types: 6 hours, 2 days, 1 minute.
-     * @return bool
-     */
-    public function isWithinNext($timeInterval);
+  /**
+   * Returns true this instance will happen within the specified interval
+   *
+   * @param string|int $timeInterval the numeric value with space then time type.
+   *    Example of valid types: 6 hours, 2 days, 1 minute.
+   */
+  public function isWithinNext(arraykey $timeInterval): bool;
 
   public function isMutable(): bool;
 }
