@@ -1,40 +1,35 @@
 namespace Ytake\Hurry;
 
-use namespace HH\Lib\Str;
-use function array_keys;
+use namespace HH\Lib\Dict;
 use function str_replace;
-
-enum DiffString: string as string {
-  YEAR = '1 year';
-  YEAR_PLURAL = '{count} years';
-  MONTH = '1 month';
-  MONTH_PLURAL = '{count} months';
-  WEEK = '1 week';
-  WEEK_PLURAL = '{count} weeks';
-  DAY = '1 day';
-  DAY_PLURAL = '{count} days';
-  HOUR = '1 hour';
-  HOUR_PLURAL = '{count} hours';
-  MINUITE = '1 minute';
-  MINUITE_PLURAL = '{count} minutes';
-  SECOND = '1 second';
-  SECOND_PLURAL = '{count} seconds';
-  AGO = '{time} ago';
-  FROM_NOW = '{time} from now';
-  AFTER = '{time} after';
-  BEFORE = '{time} before';
-}
+use function array_key_exists;
 
 final class Translator {
 
+  public function exists(string $key): bool {
+    $values = DiffString::getValues();
+    return array_key_exists($key, $values);
+  }
+
+  public function plural(
+    DiffString $key,
+    int $count,
+    dict<string, arraykey> $vars = dict[]
+  ): string {
+    if ($count === 1) {
+      return $this->singular($key, $vars);
+    }
+    return $this->singular($key, Dict\merge(dict['count' => $count], $vars));
+  }
+
   public function singular(
     DiffString $key,
-    vec<int> $vars = vec[]
+    dict<string, arraykey> $vars = dict[]
   ): string {
-    $varKeys = array_keys($vars);
+    $varKeys = Dict\map_keys($vars, $k ==> (string) $k);
     foreach ($varKeys as $i => $k) {
       $varKeys[$i] = '{' . $k . '}';
     }
-    return \str_replace($key, (string) $varKeys, $vars);
+    return str_replace($key, (string) $varKeys, $vars);
   }
 }
