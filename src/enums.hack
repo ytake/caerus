@@ -1,4 +1,4 @@
-namespace Ytake\Hurry;
+namespace Ytake\Caerus;
 
 enum Day: int {
   MONDAY = 1;
@@ -52,4 +52,15 @@ enum DiffString: string as string {
   FROM_NOW = '{time} from now';
   AFTER = '{time} after';
   BEFORE = '{time} before';
+}
+
+enum Period: string as string {
+  PREFIX = 'P';
+  YEARS = 'Y';
+  MONTHS = 'M';
+  DAYS = 'D';
+  TIME_PREFIX = 'T';
+  HOURS = 'H';
+  MINUTES = 'M';
+  SECONDS = 'S';
 }

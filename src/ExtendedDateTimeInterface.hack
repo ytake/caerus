@@ -1,4 +1,4 @@
-namespace Ytake\Hurry;
+namespace Ytake\Caerus;
 
 use type DateTimeInterface;
 use type DateTimeZone;

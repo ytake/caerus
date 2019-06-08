@@ -1,8 +1,8 @@
-namespace Ytake\Hurry;
+namespace Ytake\Caerus;
 
 use type DateInterval;
-use type Ytake\Hurry\Unit;
-use type Ytake\Hurry\NumberOf;
+use type Ytake\Caerus\Unit;
+use type Ytake\Caerus\NumberOf;
 
 class DifferenceFormatter {
 

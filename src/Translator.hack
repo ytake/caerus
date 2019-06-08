@@ -1,4 +1,4 @@
-namespace Ytake\Hurry;
+namespace Ytake\Caerus;
 
 use namespace HH\Lib\Dict;
 use function str_replace;
