@@ -1,7 +1,5 @@
 use type DateInterval;
-use type Ytake\Caerus\NumberOf;
 use type Ytake\Caerus\Interval;
-use type Facebook\HackTest\HackTest;
 use function Facebook\FBExpect\expect;
 
 class IntervalConstructTest extends AbstractTestCase {

@@ -7,10 +7,10 @@ abstract class AbstractTestCase extends HackTest {
   protected function toBeSameIntervalProperties(
     Interval $hi,
     int $years,
-    int $months = 0, 
+    int $months = 0,
     int $days = 0,
     int $hours = 0,
-    int $minutes = 0, 
+    int $minutes = 0,
     int $seconds = 0
   ): void {
     expect($years)->toBeSame($hi->years, 'Interval->years');

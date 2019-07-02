@@ -1,6 +1,6 @@
 namespace Ytake\Caerus\Traits;
 
-use namespace HH\Lib\{Regex, C};
+use namespace HH\Lib\{C, Regex};
 
 trait RelativeKeywordTrait {
 

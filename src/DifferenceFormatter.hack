@@ -1,8 +1,7 @@
 namespace Ytake\Caerus;
 
 use type DateInterval;
-use type Ytake\Caerus\Unit;
-use type Ytake\Caerus\NumberOf;
+use type Ytake\Caerus\{NumberOf, Unit};
 
 class DifferenceFormatter {
 

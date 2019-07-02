@@ -62,7 +62,7 @@ class Interval extends DateInterval {
   }
 
   public static function create(
-    int $years = 1, 
+    int $years = 1,
     int $months = 0,
     int $weeks = 0,
     int $days = 0,

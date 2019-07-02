@@ -123,7 +123,7 @@ interface ExtendedDateTimeInterface extends DateTimeInterface {
    * Get the closest date from the instance.
    */
   public function closest(
-    ExtendedDateTimeInterface $dt1, 
+    ExtendedDateTimeInterface $dt1,
     ExtendedDateTimeInterface $dt2
   ): this;
 
@@ -292,7 +292,7 @@ interface ExtendedDateTimeInterface extends DateTimeInterface {
   public function subSeconds(int $value): ExtendedDateTimeInterface;
 
   public function diffForHumans(
-    ?ExtendedDateTimeInterface $other = null, 
+    ?ExtendedDateTimeInterface $other = null,
     bool $absolute = false
   ): string;
 
@@ -377,7 +377,7 @@ interface ExtendedDateTimeInterface extends DateTimeInterface {
   public function secondsUntilEndOfDay(): int;
 
   public function startOfDay(): ExtendedDateTimeInterface;
-  
+
   public function endOfDay(): ExtendedDateTimeInterface;
 
   public function startOfMonth(): ExtendedDateTimeInterface;
@@ -397,7 +397,7 @@ interface ExtendedDateTimeInterface extends DateTimeInterface {
   public function endOfCentury(): ExtendedDateTimeInterface;
 
   public function startOfWeek(): ExtendedDateTimeInterface;
-  
+
   public function endOfWeek(): ExtendedDateTimeInterface;
 
   /**
@@ -426,7 +426,7 @@ interface ExtendedDateTimeInterface extends DateTimeInterface {
 
   /**
    * Modify to the last occurrence of a given day of the week
-   * in the current month. If no dayOfWeek is provided, modify to the 
+   * in the current month. If no dayOfWeek is provided, modify to the
    * last day of the current month.  Use the supplied consts
    * to indicate the desired dayOfWeek, ex. static::MONDAY.
    */
@@ -434,7 +434,7 @@ interface ExtendedDateTimeInterface extends DateTimeInterface {
 
   /**
    * Modify to the given occurrence of a given day of the week
-   * in the current month. If the calculated occurrence is outside the scope 
+   * in the current month. If the calculated occurrence is outside the scope
    * of the current month, then return false and no modifications are made.
    * Use the supplied consts to indicate the desired dayOfWeek, ex. static::MONDAY.
    */

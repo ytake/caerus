@@ -1,10 +1,11 @@
 namespace Ytake\Caerus;
 
-use type DateTimeImmutable;
 use namespace Ytake\Caerus\Traits;
 
-class Caerus extends DateTimeImmutable implements ExtendedDateTimeInterface {
+class Caerus extends ExtendedDateTime implements ExtendedDateTimeInterface {
   use Traits\FactoryTrait;
+  use Traits\FrozenTimeTrait;
+  use Traits\FormattingTrait;
   use Traits\TimezoneTrait;
   use Traits\RelativeKeywordTrait;
 }
